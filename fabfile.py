@@ -20,8 +20,8 @@ def host_type():
 
 
 @roles('test')
-def remote_run(command):
-	run(command)
+def remote_run():
+	run('pip list | grep ipython || pip install ipython')
 
 
 def ls_tmp():
