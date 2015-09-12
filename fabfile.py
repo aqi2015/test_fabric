@@ -8,18 +8,18 @@ from fabric.api import (
 
 env.roledefs = {
 	'test': [
-		'127.0.0.1',
-		'127.0.0.1',
+		'root@127.0.0.1',
+		'root@127.0.0.1',
 	],
 }
 
 
 
-@roles('test')
 def host_type():
 	run('uname -s')
 
 
+@roles('test')
 def remote_run(command):
 	run(command)
 
